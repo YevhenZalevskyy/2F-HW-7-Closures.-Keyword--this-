@@ -25,7 +25,7 @@ Object.prototype.getTotalTaxes = function() {
 
 getTotalTaxes.call(litva)
 
-// getMySalary ===========================================
+// getMySalary (repeat every 10 seconds) =================
 function getMySalary(country) {
   mySalary = {}
   mySalary.salary = Math.round(1499.5 + Math.random() * 501) // min - 0.5 + Math.random() * (max - min + 1)
@@ -33,10 +33,14 @@ function getMySalary(country) {
   mySalary.profit = mySalary.salary - mySalary.taxes
   return mySalary
 }
-console.log(getMySalary(litva));
+
+let timer = setInterval(() => console.log(getMySalary(litva)), 10000);
+// stop after 1 minute
+setTimeout(() => { clearInterval(timer)}, 61000);
 
 
-// ТУТ НЕ ДИВІТЬСЯ. ЦЕ ДЛЯ МЕНЕ)
+
+// ТУТ НЕ ДИВІТЬСЯ. ЦЕ ДЛЯ МЕНЕ))
 ////////////////////////////////////////////////////////////////
 // const person = new Object({
 //   name: 'Ivan',
