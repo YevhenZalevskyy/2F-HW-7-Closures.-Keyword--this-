@@ -25,7 +25,7 @@ Object.prototype.getTotalTaxes = function() {
 
 getTotalTaxes.call(litva)
 
-// getMySalary (repeat every 10 seconds) =================
+// getMySalary ===========================================
 function getMySalary(country) {
   mySalary = {}
   mySalary.salary = Math.round(1499.5 + Math.random() * 501) // min - 0.5 + Math.random() * (max - min + 1)
@@ -34,9 +34,10 @@ function getMySalary(country) {
   return mySalary
 }
 
+// display every 10 seconds
 let timer = setInterval(() => console.log(getMySalary(litva)), 10000);
 // stop after 1 minute
-setTimeout(() => { clearInterval(timer)}, 61000);
+setTimeout(() => {clearInterval(timer)}, 61000);
 
 
 
